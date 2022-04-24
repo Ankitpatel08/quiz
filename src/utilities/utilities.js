@@ -1,8 +1,11 @@
 import './services/service-adapter';
+import DomHelpers from './modules/dom-helpers';
 
 class utilities {
     constructor() {
-        global.utilities = this;
+        global.util = this;
+
+        this.dom = new DomHelpers();
     }
 
     async getService(item) {

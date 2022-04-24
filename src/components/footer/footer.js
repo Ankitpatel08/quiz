@@ -3,10 +3,16 @@ import './footer.scss';
 export default class Footer {
     constructor() {
         this.footerEl = document.querySelector('footer');
+        global.util.dom.injectMarkup(this.footerEl, this.formatMarkup());
+    }
 
-        this.footerEl.innerHTML = `
-            <div class="card">
-                <h1>Footer</h1>
-            </div>`;
+    formatMarkup() {
+        return (`
+            <div class="content has-text-centered">
+            <p>
+                Legal | Privacy(c) 2022, Quiz. All Rights Reserved.
+            </p>
+            </div>
+        `);
     }
 }

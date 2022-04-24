@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
-const apps = ['global', 'home', 'contact', 'aboutus'];
+const apps = ['global', 'home', 'signup', 'login', 'explore-quiz'];
 const COPY_ARRAY = [];
 
 const config = {

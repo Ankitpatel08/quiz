@@ -13,3 +13,17 @@ export function setStyle(el, styleName, value) {
 
     el.style[styleName] = value;
 }
+
+export function injectMarkup(wrapperEl, markup) {
+    wrapperEl.insertAdjacentHTML('afterbegin', markup);
+}
+
+class DomHelpers {
+    constructor() {
+        this.setAttribute = setAttribute;
+        this.setStyle = setStyle;
+        this.injectMarkup = injectMarkup;
+    }
+}
+
+export default DomHelpers;
