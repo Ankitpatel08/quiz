@@ -1,0 +1,30 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "Light year is a unit of",
+            "options": ["Time", "Distance","Light", "Intensity of light"],
+            "answer": "Light"
+        }, {
+            "id": 2,
+            "question": "Light from the Sun reaches us in nearly ",
+            "options": ["2 minutes", "4 minutes", "8 minutes", "16 minutes"],
+            "answer": "8 minutes"
+        }, {
+            "id": 3,
+            "question": "Subhash Chandra Bose became the supreme commander of Indian National Army in",
+            "options": ["1932", "1936", "1943", "1946"],
+            "answer": "1943"
+        }, {
+            "id": 4,
+            "question": "Swami Vivekananda established Ramakrishna Mission in:",
+            "options": ["1892", "1897", "1937", "1939"],
+            "answer": "1897"
+        }, {
+            "id": 5,
+            "question": "The purpose of choke in tube light is ?",
+            "options": ["To decrease the current", "To increase the current", "To decrease the voltage momentarily", "To increase the voltage momentarily"],
+            "answer": "To increase the voltage momentarily"
+        }
+    ]
+}
