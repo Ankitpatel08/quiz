@@ -1,3 +1,40 @@
 {
-    
+    "hero": {
+        "title": "Register here",
+        "subTitle": "create account in seconds"
+    },
+    "appInfo": {
+
+    },
+    "signUp": {
+        "fields": [{
+            "id": "name",
+            "label": "Full Name",
+            "type": "text",
+            "placeholder": "Enter Your Full Name",
+            "iconClass": ""
+        }, {
+            "id": "email",
+            "label": "Email",
+            "type": "email",
+            "placeholder": "Enter Your email",
+            "iconClass": "fa-envelope"
+        }, {
+            "id": "password",
+            "label": "Password",
+            "type": "password",
+            "placeholder": "Password",
+            "iconClass": "fa-key"
+        }, {
+            "id": "confirmPassword",
+            "label": "Comnfirm Password",
+            "type": "password",
+            "placeholder": "Confirm Password",
+            "iconClass": "fa-key"
+        }],
+        "submit": {
+            "className": "is-info",
+            "btnLabel": "Register Now"
+        }
+    }
 }

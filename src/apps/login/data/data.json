@@ -1,3 +1,28 @@
 {
-    
+    "hero": {
+        "title": "Login here",
+        "subTitle": "Login to Begin"
+    },
+    "appInfo": {
+
+    },
+    "signIn": {
+        "fields": [{
+            "id": "email",
+            "label": "Email",
+            "type": "email",
+            "placeholder": "Enter Your email",
+            "iconClass": "fa-envelope"
+        }, {
+            "id": "password",
+            "label": "Password",
+            "type": "password",
+            "placeholder": "Password",
+            "iconClass": "fa-key"
+        }],
+        "submit": {
+            "className": "is-info",
+            "btnLabel": "Login"
+        }
+    }
 }

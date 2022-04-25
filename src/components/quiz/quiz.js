@@ -6,8 +6,6 @@ export default class Quiz {
         this.quizData = options.data;
 
         global.util.dom.injectMarkup(this.el, this.formatMarkup(this.quizData));
-
-        this.addEventListeners();
     }
 
     formatMarkup(data) {
@@ -50,34 +48,5 @@ export default class Quiz {
         });
 
         return optMarkup;
-    }
-
-    addEventListeners() {
-        let formEl = document.querySelector('#quizFormWrapper');
-        formEl.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const formData = new FormData(formEl);
-
-            this.generateScore(formData);
-        });
-    }
-
-    generateScore(userAnswers) {
-        let correctAnswers = 0;
-        let percentage;
-
-        for (let element of userAnswers.entries()) {
-            this.quizData.questions.forEach(que => {
-                if(element[0].includes(que.id)) {
-                    if(que.answer == element[1]) {
-                        correctAnswers += 1;
-                    }
-                }
-            })
-        }
-
-        percentage = 100 * correctAnswers / this.quizData.questions.length;
-
-        console.log(`you got ${correctAnswers} answers and percentage is: ${percentage}`);
     }
 }

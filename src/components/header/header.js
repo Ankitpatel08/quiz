@@ -17,20 +17,20 @@ export default class Header {
                     <a class="navbar-item" href="/">
                         <h1> Quiz </h1>
                     </a>
-                
+
                     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarQuiz">
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                     </a>
                 </div>
-                
+
                 <div id="navbarQuiz" class="navbar-menu">
                     <div class="navbar-start"></div>
-                
+
                     <div class="navbar-end">
                         <div class="buttons">
-                            <a class="button is-primary" href="/signup">
+                            <a class="button is-info" href="/signup">
                                 <strong>Sign up</strong>
                             </a>
                             <a class="button is-light" href="/login">
