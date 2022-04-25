@@ -32,19 +32,15 @@ class Login {
     }
 
     addEventListeners() {
-        this.formEl.addEventListener('submit', (event) => {
+        this.formEl.addEventListener('submit',async (event) => {
             event.preventDefault();
             const formData = new FormData(this.formEl);
 
-            for(let el of formData.entries()) {
-                console.log(el[0] + '----' +  el[1]);
-            }
+            let response = await global.util.callService('login', Object.fromEntries(formData));
 
-            let formDataObj = global.util.func.serialize(formData);
+            console.log(response);
 
-            console.log(formDataObj);
-
-            window.location.href = '/quiz';
+            // window.location.href = '/quiz';
         });
     }
 }

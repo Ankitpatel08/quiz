@@ -32,16 +32,14 @@ class Signup {
     }
 
     addEventListeners() {
-        this.formEl.addEventListener('submit', (event) => {
+        this.formEl.addEventListener('submit',async (event) => {
             event.preventDefault();
             const formData = new FormData(this.formEl);
 
-            for(let el of formData.entries()) {
-                console.log(el[0] + '----' +  el[1]);
-            }
-
             let formDataObj = global.util.func.serialize(formData);
 
+            let response = await global.util.callService('signup', formDataObj);
+            console.log(response);
             console.log(formDataObj);
 
             window.location.href = '/login';
