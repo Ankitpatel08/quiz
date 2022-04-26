@@ -32,17 +32,16 @@ class Signup {
     }
 
     addEventListeners() {
-        this.formEl.addEventListener('submit',async (event) => {
+        this.formEl.addEventListener('submit', async (event) => {
             event.preventDefault();
+
             const formData = new FormData(this.formEl);
+            formData.append('userId', 'u1');
+            let response = await global.util.callService('signup', Object.fromEntries(formData));
 
-            let formDataObj = global.util.func.serialize(formData);
+            console.log('response', response);
 
-            let response = await global.util.callService('signup', formDataObj);
-            console.log(response);
-            console.log(formDataObj);
-
-            window.location.href = '/login';
+            // window.location.href = '/login';
         });
     }
 }

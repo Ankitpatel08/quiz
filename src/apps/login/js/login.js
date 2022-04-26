@@ -32,10 +32,10 @@ class Login {
     }
 
     addEventListeners() {
-        this.formEl.addEventListener('submit',async (event) => {
+        this.formEl.addEventListener('submit', async (event) => {
             event.preventDefault();
-            const formData = new FormData(this.formEl);
 
+            const formData = new FormData(this.formEl);
             let response = await global.util.callService('login', Object.fromEntries(formData));
 
             console.log(response);
