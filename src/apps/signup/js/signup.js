@@ -9,6 +9,11 @@ class Signup {
         this.heroEl = document.querySelector('.hero');
         this.infoEl = document.querySelector('.app-info');
         this.formEl = document.querySelector('#signupForm');
+        this.isLoggedIn = global.util.func.isLoggedIn();
+
+        if (this.isLoggedIn) {
+            window.location.href = '/profile';
+        }
 
         this.initialize();
         this.addEventListeners();
@@ -36,12 +41,11 @@ class Signup {
             event.preventDefault();
 
             const formData = new FormData(this.formEl);
-            formData.append('userId', 'u1');
             let response = await global.util.callService('signup', Object.fromEntries(formData));
 
             console.log('response', response);
 
-            // window.location.href = '/login';
+            window.location.href = '/login';
         });
     }
 }

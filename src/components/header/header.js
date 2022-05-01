@@ -3,6 +3,7 @@ import './header.scss';
 export default class Header {
     constructor() {
         this.headerEl = document.querySelector('header');
+        this.isLoggedIn = global.util.func.isLoggedIn();
         global.util.dom.injectMarkup(this.headerEl, this.formatMarkup());
 
         // DOM element cache
@@ -14,7 +15,7 @@ export default class Header {
         return (`
             <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="/">
+                    <a class="navbar-item" href="/home">
                         <h1> Quiz </h1>
                     </a>
 
@@ -30,12 +31,15 @@ export default class Header {
 
                     <div class="navbar-end">
                         <div class="buttons">
-                            <a class="button is-info" href="/signup">
+                            ${!this.isLoggedIn ? `<a class="button is-info" href="/signup">
                                 <strong>Sign up</strong>
                             </a>
                             <a class="button is-light" href="/login">
                                 Log in
-                            </a>
+                            </a>`: ''}
+                            ${this.isLoggedIn ? `
+                                <button class="button is-info logout"> Logout </button>
+                            ` : ''}
                         </div>
                     </div>
                 </div>
@@ -49,6 +53,11 @@ export default class Header {
 
             this.navBurgerEl.classList.toggle('is-active');
             this.headerEl.querySelector(`#${target}`).classList.toggle('is-active');
+        });
+
+        this.headerEl.querySelector('.logout').addEventListener('click', event => {
+            global.util.func.localStorageRemove('user');
+            window.location.href = '/login';
         });
     }
 }

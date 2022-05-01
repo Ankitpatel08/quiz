@@ -10,6 +10,12 @@ class Login {
         this.infoEl = document.querySelector('.app-info');
         this.formEl = document.querySelector('#signupForm');
 
+        this.isLoggedIn = global.util.func.isLoggedIn();
+
+        if (this.isLoggedIn) {
+            window.location.href = '/profile';
+        }
+
         this.initialize();
         this.addEventListeners();
     }
@@ -40,7 +46,10 @@ class Login {
 
             console.log(response);
 
-            // window.location.href = '/quiz';
+            if (response) {
+                global.util.func.localStorageSave('user', response);
+                window.location.href = '/profile';
+            }
         });
     }
 }
