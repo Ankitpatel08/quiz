@@ -6,15 +6,29 @@ import Quiz from '../../../components/quiz/quiz';
 class QuizApp {
     constructor() {
         this.queEl = document.querySelector('#quiz');
+        this.isLoggedIn = global.util.func.isLoggedIn();
 
-        this.initialize();
-        this.addEventListeners();
+        if (!this.isLoggedIn) {
+            window.location.href = '/login';
+        }
+
+        (async () => {
+            const quiz = global.util.func.localStorageGet('quiz');
+            const quizCode = quiz && quiz.code;
+
+            this.quizData = await global.util.callService('getQuizData', {
+                code: quizCode,
+            });
+
+            this.initialize(this.quizData);
+            this.addEventListeners();
+        })();
     }
 
-    initialize() {
+    initialize(quizData) {
         this.quiz = new Quiz({
             el: this.queEl,
-            data: data,
+            data: quizData,
         });
     }
 
@@ -33,7 +47,7 @@ class QuizApp {
         let percentage;
 
         for (let element of userAnswers.entries()) {
-            data.questions.forEach(que => {
+            this.quizData.forEach(que => {
                 if(element[0].includes(que.id)) {
                     if(que.answer == element[1]) {
                         correctAnswers += 1;
@@ -42,7 +56,7 @@ class QuizApp {
             })
         }
 
-        percentage = 100 * correctAnswers / data.questions.length;
+        percentage = 100 * correctAnswers / this.quizData.length;
 
         console.log(`you got ${correctAnswers} answers and percentage is: ${percentage}`);
     }

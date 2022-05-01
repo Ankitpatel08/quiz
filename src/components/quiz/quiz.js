@@ -11,7 +11,7 @@ export default class Quiz {
     formatMarkup(data) {
         return (`
             <form id="quizFormWrapper" name="quizFormWrapper">
-                ${this.generateQuestions(data.questions)}
+                ${this.generateQuestions(data)}
 
                 <div class="field">
                     <div class="control">

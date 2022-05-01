@@ -1,3 +1,14 @@
 {
-    
+    "cards": [
+        {
+            "label": "HTML",
+            "code": "html"
+        }, {
+            "label": "CSS",
+            "code": "css"
+        }, {
+            "label": "Javascript",
+            "code": "javascript"
+        }
+    ]
 }

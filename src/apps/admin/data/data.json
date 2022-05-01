@@ -1,0 +1,51 @@
+{
+    "addQuestions": {
+        "fields": [{
+            "id": "code",
+            "label": "Code",
+            "type": "text",
+            "placeholder": "Enter Code",
+            "iconClass": "" 
+        }, {
+            "id": "question",
+            "label": "Question",
+            "type": "text",
+            "placeholder": "Enter Question",
+            "iconClass": "" 
+        }, {
+            "id": "optionsA",
+            "label": "Option A",
+            "type": "text",
+            "placeholder": "Option A",
+            "iconClass": "" 
+        }, {
+            "id": "optionsB",
+            "label": "Option B",
+            "type": "text",
+            "placeholder": "Option B",
+            "iconClass": "" 
+        }, {
+            "id": "optionsC",
+            "label": "Option C",
+            "type": "text",
+            "placeholder": "Option C",
+            "iconClass": "" 
+        }, {
+            "id": "optionsD",
+            "label": "Option D",
+            "type": "text",
+            "placeholder": "Option D",
+            "iconClass": "" 
+        }, {
+            "id": "answer",
+            "label": "Answer",
+            "type": "text",
+            "placeholder": "Correct Answer",
+            "iconClass": "" 
+        }],
+        "submit": {
+            "className": "is-info",
+            "btnLabel": "Add"
+        }
+    }
+}

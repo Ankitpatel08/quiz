@@ -30,7 +30,7 @@ class Profile {
             <h2>${data.name}</h2>
             <h3>${data.email}</h3>
 
-            <a class="button is-primary" href="/quiz">Quiz</a>
+            <a class="button is-primary" href="/explroe-quiz">Quiz</a>
         </div>
         `);
     }
