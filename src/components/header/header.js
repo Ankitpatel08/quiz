@@ -8,6 +8,7 @@ export default class Header {
 
         // DOM element cache
         this.navBurgerEl = this.headerEl.querySelector('.navbar-burger');
+        this.logoutCta = this.headerEl.querySelector('.logout')
         this.addEventListeners();
     }
 
@@ -55,7 +56,7 @@ export default class Header {
             this.headerEl.querySelector(`#${target}`).classList.toggle('is-active');
         });
 
-        this.headerEl.querySelector('.logout').addEventListener('click', event => {
+        this.logoutCta && this.logoutCta.addEventListener('click', event => {
             global.util.func.localStorageRemove('user');
             window.location.href = '/login';
         });
